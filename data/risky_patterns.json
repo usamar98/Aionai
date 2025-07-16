@@ -1,0 +1,12 @@
+{
+  "high_risk": [
+    "transferFrom",
+    "mint",
+    "blacklist"
+  ],
+  "medium_risk": [
+    "proxy",
+    "upgradeable",
+    "owner"
+  ]
+}
