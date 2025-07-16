@@ -1,9 +1,9 @@
 import asyncio
 import logging
-from dotenv import load_dotenv  # Add this import
+from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv()  # Add this line
+load_dotenv()
 
 from aiogram import Bot, Dispatcher
 from aiogram.filters import CommandStart
@@ -36,7 +36,7 @@ async def main():
         dp.include_router(help.router)
         
         # Start polling
-        logger.info("🤖 Aion AI Lite bot is starting...")
+        logger.info("🤖 Aion AI bot is starting...")
         await dp.start_polling(bot)
         
     except Exception as e:
@@ -46,3 +46,26 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+
+### Step 3: Deploy
+
+
+#
+# Add this to your bot.py
+import asyncio
+from aiohttp import web
+
+async def health_check(request):
+    return web.Response(text="Bot is running!")
+
+# Add health check endpoint
+app = web.Application()
+app.router.add_get('/health', health_check)
+
+# Run alongside your bot
+async def start_health_server():
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, '0.0.0.0', 8000)
+    await site.start()
