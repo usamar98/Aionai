@@ -25,21 +25,29 @@ wheels/
 .installed.cfg
 *.egg
 
-# Database files
-data/*.db
-data/*.sqlite
-data/*.sqlite3
-
-# Logs
-*.log
-logs/
-
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# API Keys and Secrets
+config_local.py
+secrets.json
+data/*.db
+data/*.sqlite
+data/*.sqlite3
