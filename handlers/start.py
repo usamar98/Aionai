@@ -35,7 +35,7 @@ async def handle_inline_buttons(callback):
     """Handle inline button callbacks"""
     responses = {
         "scan_help": "🔍 **URL Scanner**\n\nUsage: `/scan https://example.com`\n\nI'll analyze the URL for suspicious patterns and warn you about potential threats.",
-        "coming_soon": "                    🚧 **Coming Soon!** 🚧\n                    💡 Stay tuned for updates!"
+        "coming_soon": "                    🚧 **Coming Soon!** 🚧\n 💡 Stay tuned for updates!"
     }
     
     await callback.message.edit_text(responses[callback.data], parse_mode="Markdown")
